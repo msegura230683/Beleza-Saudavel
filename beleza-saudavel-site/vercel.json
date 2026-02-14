@@ -1,9 +1,5 @@
 {
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "framework": "nextjs",
-  "buildCommand": "bun run build",
-  "installCommand": "bun install",
-  "devCommand": "bun run dev"
+  ]
 }
