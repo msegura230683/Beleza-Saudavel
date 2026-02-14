@@ -3,46 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beleza Saudável - Cuidado natural para você</title>
-    <meta name="description" content="Descubra produtos selecionados para realçar sua beleza natural e promover saúde capilar com resultados comprovados.">
+    <title>Beleza Saudável - Cuidado natural para você | Produtos Naturais</title>
+    <meta name="description" content="Descubra produtos 100% naturais para realçar sua beleza. Polivitamínico da Iza para cabelos, SEK da IZA para emagrecimento e DermaNattus para rejuvenescimento. Resultados comprovados!">
+    <meta name="keywords" content="produtos naturais, beleza, saúde capilar, emagrecimento, rejuvenescimento, polivitamínico, DermaNattus, cuidados com a pele, suplementos naturais">
+    <meta name="author" content="Beleza Saudável">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://beleza-saudavel.vercel.app/">
+    <meta property="og:title" content="Beleza Saudável - Cuidado natural para você">
+    <meta property="og:description" content="Produtos 100% naturais para realçar sua beleza. Resultados comprovados para cabelo, corpo e pele.">
+    <meta property="og:image" content="images/beleza-saudavel.jpeg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Beleza Saudável - Cuidado natural para você">
+    <meta name="twitter:description" content="Produtos 100% naturais para realçar sua beleza.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://beleza-saudavel.vercel.app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/beleza-saudavel.jpeg">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
+        :root {
+            --primary: #9333ea;
+            --primary-light: #a855f7;
+            --primary-dark: #7c3aed;
+            --secondary: #ec4899;
+            --accent: #f472b6;
+            --lilac: #c4b5fd;
+            --lilac-light: #ede9fe;
+            --lilac-dark: #8b5cf6;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f4f4f5;
+            --gray-200: #e4e4e7;
+            --gray-600: #52525b;
+            --gray-700: #3f3f46;
+            --gray-800: #27272a;
+            --gray-900: #18181b;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: white;
-            color: #1a1a1a;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--white);
+            color: var(--gray-800);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+        .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+        .animate-slideInLeft { animation: slideInLeft 0.8s ease-out forwards; }
+        .animate-slideInRight { animation: slideInRight 0.8s ease-out forwards; }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-pulse { animation: pulse 2s ease-in-out infinite; }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
         
         /* Header */
         header {
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(147, 51, 234, 0.1);
             position: sticky;
             top: 0;
-            z-index: 50;
+            z-index: 100;
+            transition: all 0.3s ease;
         }
         
         header .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px;
+            padding: 12px 16px;
             flex-wrap: wrap;
             gap: 16px;
         }
         
-        .logo-section { display: flex; align-items: center; gap: 12px; }
-        .logo-img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
-        .logo-text h1 { font-size: 22px; font-weight: bold; color: #1f2937; font-family: cursive; }
-        .logo-text p { font-size: 14px; color: #ec4899; }
+        .logo-section { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            text-decoration: none;
+        }
         
-        .social-links { display: flex; gap: 12px; }
+        .logo-img { 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            object-fit: cover;
+            border: 3px solid var(--lilac);
+            box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-img:hover { transform: scale(1.1); }
+        
+        .logo-text h1 { 
+            font-size: 24px; 
+            font-weight: bold; 
+            color: var(--primary);
+            font-family: 'Dancing Script', cursive;
+            transition: color 0.3s ease;
+        }
+        
+        .logo-text p { 
+            font-size: 12px; 
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+        
+        .social-links { display: flex; gap: 12px; align-items: center; }
+        
         .social-links a {
             padding: 10px;
             border-radius: 50%;
@@ -51,361 +179,1080 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
         }
-        .social-links a:hover { transform: scale(1.1); }
-        .instagram-btn { background: linear-gradient(to right, #8b5cf6, #ec4899, #f97316); box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
-        .whatsapp-btn { background: #22c55e; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+        
+        .social-links a:hover { transform: scale(1.15) rotate(5deg); }
+        .instagram-btn { background: linear-gradient(135deg, #8b5cf6, #ec4899, #f97316); box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4); }
+        .whatsapp-btn { background: #25d366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(90deg, var(--lilac-light), var(--white));
+            padding: 12px 0;
+            border-bottom: 1px solid var(--lilac);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+            background: var(--lilac-light);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        nav ul li a:hover::after {
+            width: 80%;
+        }
         
         /* Hero */
         .hero {
-            padding: 60px 0;
-            background: linear-gradient(to bottom, #fdf2f8, white, #fdf2f8);
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--lilac-light) 0%, var(--white) 50%, #fdf2f8 100%);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
         
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.05) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero-content { position: relative; z-index: 1; }
+        
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: #fce7f3;
-            color: #be185d;
-            padding: 8px 16px;
+            background: linear-gradient(135deg, var(--lilac), var(--primary-light));
+            color: white;
+            padding: 10px 20px;
             border-radius: 50px;
             font-size: 14px;
             font-weight: 500;
             margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(147, 51, 234, 0.3);
+            animation: fadeInDown 0.8s ease-out;
         }
         
-        .hero h2 { font-size: 32px; font-weight: bold; color: #1f2937; margin-bottom: 16px; }
-        .hero h2 span { color: #ec4899; }
-        .hero p { font-size: 18px; color: #4b5563; max-width: 600px; margin: 0 auto; }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero h2 { 
+            font-size: 36px; 
+            font-weight: 700; 
+            color: var(--gray-800);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        
+        .hero h2 span { 
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .hero h2 span::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--lilac), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .hero p { 
+            font-size: 18px; 
+            color: var(--gray-600); 
+            max-width: 600px; 
+            margin: 0 auto 32px;
+        }
+        
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--lilac-dark));
+            color: white;
+            box-shadow: 0 4px 20px rgba(147, 51, 234, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(147, 51, 234, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--lilac);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--lilac-light);
+            transform: translateY(-3px);
+        }
         
         @media (min-width: 768px) {
-            .hero h2 { font-size: 42px; }
+            .hero h2 { font-size: 48px; }
+            .hero { padding: 100px 0; }
         }
         
         /* Products */
-        .product-section { padding: 48px 0; }
-        .section-pink { background: linear-gradient(to bottom, #fdf2f8, white, #fdf2f8); }
-        .section-orange { background: linear-gradient(to right, #fff7ed, #fdf2f8, #faf5ff); }
-        .section-purple { background: linear-gradient(to right, #faf5ff, #fdf2f8, #f3e8ff); }
-        
-        .product-card {
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            padding: 24px;
-            border: 2px solid #fce7f3;
-            position: relative;
+        .products-section {
+            padding: 80px 0;
+            background: var(--white);
         }
-        .card-pink { border-color: #fce7f3; }
-        .card-orange { border-color: #ffedd5; }
-        .card-purple { border-color: #f3e8ff; }
         
-        .product-badge {
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            color: white;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 4px;
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
         }
-        .badge-pink { background: #ec4899; }
-        .badge-orange { background: linear-gradient(to right, #f97316, #ec4899); }
-        .badge-purple { background: linear-gradient(to right, #8b5cf6, #ec4899); }
         
-        .product-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-            padding-top: 16px;
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 12px;
+        }
+        
+        .section-header h2 span { color: var(--primary); }
+        
+        .section-header p {
+            color: var(--gray-600);
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
         }
         
         @media (min-width: 768px) {
-            .product-content { flex-direction: row; }
+            .products-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(147, 51, 234, 0.1);
+            border: 1px solid var(--lilac-light);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(147, 51, 234, 0.2);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--lilac-dark));
+            color: white;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+        
+        .product-image-container {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--lilac-light), #fdf2f8);
         }
         
         .product-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 16px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+        
+        .product-placeholder {
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
+            gap: 12px;
         }
-        .img-pink { background: linear-gradient(to bottom right, #fce7f3, #fbcfe8); }
-        .img-orange { background: linear-gradient(to bottom right, #ffedd5, #fbcfe8); }
-        .img-purple { background: linear-gradient(to bottom right, #f3e8ff, #fbcfe8); }
         
-        .product-image .icon { font-size: 48px; margin-bottom: 8px; }
-        .product-image .name { font-weight: bold; font-size: 16px; text-align: center; }
-        .img-pink .name { color: #be185d; }
-        .img-orange .name { color: #c2410c; }
-        .img-purple .name { color: #7c3aed; }
+        .product-placeholder .icon {
+            font-size: 48px;
+            opacity: 0.8;
+        }
         
-        .product-info { flex: 1; text-align: center; }
-        @media (min-width: 768px) { .product-info { text-align: left; } }
+        .product-placeholder .name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
         
-        .product-info h3 { font-size: 24px; font-weight: bold; color: #1f2937; margin-bottom: 8px; }
-        .product-info > p { color: #4b5563; margin-bottom: 20px; font-size: 16px; }
-        .product-info .highlight { font-weight: 600; margin-bottom: 16px; font-size: 14px; }
+        .product-info {
+            padding: 24px;
+        }
+        
+        .product-info h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 8px;
+        }
+        
+        .product-info p {
+            color: var(--gray-600);
+            font-size: 14px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
         
         .benefits-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            margin-bottom: 24px;
+            list-style: none;
+            margin-bottom: 20px;
         }
-        @media (min-width: 640px) { .benefits-list { grid-template-columns: 1fr 1fr; } }
         
-        .benefit-item {
+        .benefits-list li {
             display: flex;
             align-items: flex-start;
             gap: 8px;
-            text-align: left;
-            font-size: 14px;
-            color: #374151;
+            font-size: 13px;
+            color: var(--gray-700);
+            margin-bottom: 8px;
         }
-        .benefit-item .check { color: #22c55e; font-size: 18px; flex-shrink: 0; }
-        .benefit-item .check-orange { color: #f97316; }
-        .benefit-item .check-purple { color: #8b5cf6; }
         
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-weight: bold;
+        .benefits-list li .check {
+            color: var(--primary);
             font-size: 16px;
-            text-decoration: none;
-            transition: all 0.2s;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+            flex-shrink: 0;
         }
-        .cta-button:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-        .cta-pink { background: linear-gradient(to right, #ec4899, #db2777); }
-        .cta-orange { background: linear-gradient(to right, #f97316, #ec4899); }
-        .cta-purple { background: linear-gradient(to right, #8b5cf6, #ec4899); }
         
-        /* Features */
-        .features {
-            padding: 64px 0;
-            background: linear-gradient(to right, #ec4899, #db2777);
+        .btn-product {
+            width: 100%;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--lilac-dark));
             color: white;
-            text-align: center;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
-        .features h2 { font-size: 28px; font-weight: bold; margin-bottom: 8px; }
-        .features > .container > p { opacity: 0.9; margin-bottom: 48px; }
+        .btn-product:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(147, 51, 234, 0.4);
+        }
         
-        .features-grid {
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--lilac-light) 0%, var(--white) 100%);
+        }
+        
+        .testimonials-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
         }
-        @media (min-width: 768px) { .features-grid { grid-template-columns: repeat(3, 1fr); } }
+        
+        @media (min-width: 768px) {
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (min-width: 1024px) {
+            .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(147, 51, 234, 0.1);
+            border: 1px solid var(--lilac-light);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(147, 51, 234, 0.15);
+        }
+        
+        .testimonial-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover .testimonial-image {
+            transform: scale(1.05);
+        }
+        
+        .testimonial-content {
+            padding: 20px;
+        }
+        
+        .testimonial-product {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--lilac-light), var(--lilac));
+            color: var(--primary-dark);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .testimonial-text {
+            color: var(--gray-700);
+            font-size: 14px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        .testimonial-product-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-600);
+            margin-top: 12px;
+        }
+        
+        /* Features */
+        .features-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--lilac-dark));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (min-width: 768px) {
+            .features-grid { grid-template-columns: repeat(3, 1fr); }
+        }
         
         .feature-card {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            border-radius: 16px;
-            padding: 24px;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
         }
         
         .feature-icon {
-            width: 64px;
-            height: 64px;
+            width: 70px;
+            height: 70px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 28px;
+            margin: 0 auto 20px;
+            font-size: 32px;
         }
         
-        .feature-card h3 { font-size: 20px; font-weight: bold; margin-bottom: 8px; }
-        .feature-card p { opacity: 0.9; font-size: 14px; }
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card p { opacity: 0.9; font-size: 14px; line-height: 1.6; }
         
         /* CTA Section */
-        .cta-section { padding: 64px 0; background: white; text-align: center; }
-        .cta-section h2 { font-size: 28px; font-weight: bold; color: #1f2937; margin-bottom: 16px; }
-        .cta-section > .container > p { color: #4b5563; margin-bottom: 32px; font-size: 18px; }
+        .cta-section {
+            padding: 80px 0;
+            background: var(--white);
+            text-align: center;
+        }
         
-        .cta-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+        .cta-box {
+            background: linear-gradient(135deg, var(--lilac-light), #fdf2f8);
+            border-radius: 30px;
+            padding: 60px 40px;
+            border: 2px solid var(--lilac);
+        }
         
-        /* Footer */
-        footer { background: #111827; color: white; padding: 48px 0; }
+        .cta-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 16px;
+        }
         
-        .footer-content {
+        .cta-section p {
+            color: var(--gray-600);
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+        
+        .cta-buttons {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 60px 0;
+            background: var(--gray-50);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 32px;
         }
-        @media (min-width: 768px) { .footer-content { flex-direction: row; justify-content: space-between; } }
         
-        .footer-logo { display: flex; align-items: center; gap: 12px; }
-        .footer-logo img { width: 56px; height: 56px; border-radius: 50%; }
-        .footer-logo h3 { font-size: 18px; font-weight: bold; font-family: cursive; }
-        .footer-logo p { color: #9ca3af; font-size: 14px; }
+        @media (min-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr 1fr; }
+        }
         
-        .footer-contact { text-align: center; }
-        @media (min-width: 768px) { .footer-contact { text-align: right; } }
-        .footer-contact p { color: #9ca3af; font-size: 14px; margin-bottom: 12px; }
+        .contact-info h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 16px;
+        }
         
-        .footer-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-        @media (min-width: 768px) { .footer-links { justify-content: flex-end; } }
+        .contact-info p {
+            color: var(--gray-600);
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
         
-        .footer-links a {
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .contact-link {
             display: flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 14px;
-            border-radius: 50px;
-            color: white;
+            gap: 12px;
+            color: var(--gray-700);
             text-decoration: none;
-            font-size: 13px;
+            padding: 16px 20px;
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--lilac-light);
+            transition: all 0.3s ease;
         }
-        .footer-links .instagram { background: linear-gradient(to right, #8b5cf6, #ec4899, #f97316); }
-        .footer-links .whatsapp { background: #22c55e; }
+        
+        .contact-link:hover {
+            border-color: var(--lilac);
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(147, 51, 234, 0.1);
+        }
+        
+        .contact-link .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .contact-link .icon.instagram {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899, #f97316);
+            color: white;
+        }
+        
+        .contact-link .icon.whatsapp {
+            background: #25d366;
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content { grid-template-columns: 2fr 1fr 1fr; }
+        }
+        
+        .footer-brand h3 {
+            font-size: 28px;
+            font-weight: 700;
+            font-family: 'Dancing Script', cursive;
+            color: var(--lilac);
+            margin-bottom: 12px;
+        }
+        
+        .footer-brand p {
+            color: var(--gray-400);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        .footer-links-section h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--lilac-light);
+        }
+        
+        .footer-links-section ul {
+            list-style: none;
+        }
+        
+        .footer-links-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links-section ul li a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links-section ul li a:hover {
+            color: var(--lilac);
+        }
         
         .footer-bottom {
-            margin-top: 32px;
-            padding-top: 32px;
-            border-top: 1px solid #374151;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray-800);
             text-align: center;
-            color: #6b7280;
+            color: var(--gray-500);
             font-size: 14px;
         }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+        }
+        
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            background: var(--gray-900);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            width: 350px;
+            max-width: calc(100vw - 48px);
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            z-index: 999;
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            animation: fadeInUp 0.3s ease-out;
+        }
+        
+        .chatbot-container.active {
+            display: flex;
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--primary), var(--lilac-dark));
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .chatbot-header h4 {
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+            padding: 4px;
+        }
+        
+        .chatbot-messages {
+            height: 300px;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .chat-message {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 16px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .chat-message.bot {
+            background: var(--lilac-light);
+            color: var(--gray-800);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+        
+        .chat-message.user {
+            background: linear-gradient(135deg, var(--primary), var(--lilac-dark));
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        
+        .chatbot-options {
+            padding: 12px 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            border-top: 1px solid var(--lilac-light);
+        }
+        
+        .chat-option {
+            background: var(--lilac-light);
+            color: var(--primary);
+            border: none;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-option:hover {
+            background: var(--lilac);
+            color: white;
+        }
+        
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--lilac-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(147, 51, 234, 0.4);
+            z-index: 998;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .chatbot-toggle svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+        
+        .chatbot-toggle.hidden {
+            display: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                gap: 8px;
+                padding: 16px 0;
+            }
+            
+            nav ul.active { display: flex; }
+            
+            .hero h2 { font-size: 28px; }
+            .hero { padding: 60px 0; }
+            
+            .section-header h2 { font-size: 26px; }
+            
+            .whatsapp-float {
+                bottom: 16px;
+                right: 16px;
+                width: 54px;
+                height: 54px;
+            }
+            
+            .chatbot-container {
+                bottom: 80px;
+                right: 16px;
+            }
+            
+            .chatbot-toggle {
+                bottom: 80px;
+                right: 16px;
+            }
+        }
+        
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Beleza Saudável",
+        "description": "Produtos 100% naturais para beleza e bem-estar",
+        "image": "images/beleza-saudavel.jpeg",
+        "url": "https://beleza-saudavel.vercel.app/",
+        "telephone": "+55-15-99692-5676",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR"
+        },
+        "sameAs": [
+            "https://www.instagram.com/comunidade_beautiful"
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container">
-            <div class="logo-section">
-                <img src="logo-beleza-saudavel.jpeg" alt="Beleza Saudável" class="logo-img" onerror="this.style.display='none'">
+            <a href="#" class="logo-section">
+                <img src="images/beleza-saudavel.jpeg" alt="Beleza Saudável Logo" class="logo-img" onerror="this.style.display='none'">
                 <div class="logo-text">
                     <h1>Beleza Saudável</h1>
                     <p>Cuidado natural para você</p>
                 </div>
-            </div>
+            </a>
             <div class="social-links">
                 <a href="https://www.instagram.com/comunidade_beautiful?igsh=ZzRkNjJxdWVucTF2" target="_blank" rel="noopener noreferrer" class="instagram-btn" aria-label="Instagram">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                    </svg>
                 </a>
-                <a href="https://wa.me/5515996925676" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="WhatsApp">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <a href="https://wa.me/5515996925676?text=Olá! Quero informações dos produtos" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="WhatsApp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
                 </a>
             </div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Navigation -->
+    <nav>
         <div class="container">
-            <div class="hero-badge">
-                <span>❤️</span>
-                <span>Cuidado natural e eficaz</span>
+            <ul id="nav-menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#depoimentos">Resultados</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge animate-fadeInUp">
+                    <span>✨</span>
+                    <span>Cuidado natural e eficaz</span>
+                </div>
+                <h2 class="animate-fadeInUp delay-100">Transforme sua <span>Beleza</span> de dentro para fora</h2>
+                <p class="animate-fadeInUp delay-200">Descubra produtos 100% naturais selecionados para realçar sua beleza e promover saúde com resultados comprovados.</p>
+                <div class="hero-cta animate-fadeInUp delay-300">
+                    <a href="#produtos" class="btn btn-primary">
+                        <span>🛍️</span> Ver Produtos
+                    </a>
+                    <a href="https://wa.me/5515996925676?text=Olá! Quero informações dos produtos" target="_blank" class="btn btn-secondary">
+                        <span>💬</span> Fale Conosco
+                    </a>
+                </div>
             </div>
-            <h2>Transforme sua <span>Beleza</span> de dentro para fora</h2>
-            <p>Descubra produtos selecionados para realçar sua beleza natural e promover saúde capilar com resultados comprovados.</p>
         </div>
     </section>
 
-    <!-- Product 1: Polivitamínico da Iza -->
-    <section class="product-section section-pink">
+    <!-- Products Section -->
+    <section class="products-section" id="produtos">
         <div class="container">
-            <div class="product-card card-pink">
-                <div class="product-badge badge-pink">✨ DESTAQUE</div>
-                <div class="product-content">
-                    <div class="product-image img-pink">
-                        <span class="icon">💖</span>
-                        <span class="name">Poli da Iza</span>
+            <div class="section-header reveal">
+                <h2>Nossos <span>Produtos</span></h2>
+                <p>Soluções naturais desenvolvidas com ingredientes selecionados para sua beleza e bem-estar</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1: Polivitamínico da Iza -->
+                <div class="product-card reveal">
+                    <span class="product-badge">Destaque</span>
+                    <div class="product-image-container">
+                        <img src="images/Polivitaminico.jpeg" alt="Polivitamínico da Iza" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-placeholder" style="display: none;">
+                            <span class="icon">💖</span>
+                            <span class="name">Polivitamínico da Iza</span>
+                        </div>
                     </div>
                     <div class="product-info">
                         <h3>Polivitamínico da Iza</h3>
-                        <p>O combo perfeito que seu cabelo precisa na dosagem certa! Suplemento 100% natural desenvolvido para transformar a saúde capilar.</p>
-                        <div class="benefits-list">
-                            <div class="benefit-item"><span class="check">✓</span><span>Acelera o crescimento capilar</span></div>
-                            <div class="benefit-item"><span class="check">✓</span><span>Fortalece os fios desde a raiz</span></div>
-                            <div class="benefit-item"><span class="check">✓</span><span>Reduz até 95% da queda</span></div>
-                            <div class="benefit-item"><span class="check">✓</span><span>Melhora a saúde de pele e unhas</span></div>
-                            <div class="benefit-item"><span class="check">✓</span><span>Contém Vitamina D e aminoácidos essenciais</span></div>
-                        </div>
-                        <a href="https://polivitaminicodaiza.com.br/?pv=pro1rw54&af=afi65y9x6l" target="_blank" rel="noopener noreferrer" class="cta-button cta-pink">
-                            🛒 Quero Conhecer o Produto
+                        <p>O combo perfeito para seu cabelo! Suplemento 100% natural desenvolvido para transformar a saúde capilar.</p>
+                        <ul class="benefits-list">
+                            <li><span class="check">✓</span> Acelera o crescimento capilar</li>
+                            <li><span class="check">✓</span> Fortalece os fios desde a raiz</li>
+                            <li><span class="check">✓</span> Reduz até 95% da queda</li>
+                            <li><span class="check">✓</span> Melhora pele e unhas</li>
+                        </ul>
+                        <a href="https://polivitaminicodaiza.com.br/?pv=pro1rw54&af=afi65y9x6l" target="_blank" rel="noopener noreferrer" class="btn-product">
+                            🛒 Quero Conhecer
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Product 2: SEK da IZA -->
-    <section class="product-section section-orange">
-        <div class="container">
-            <div class="product-card card-orange">
-                <div class="product-badge badge-orange">🔥 NOVIDADE</div>
-                <div class="product-content">
-                    <div class="product-image img-orange">
-                        <span class="icon">🔥</span>
-                        <span class="name">SEK da IZA</span>
+                <!-- Product 2: SEK da IZA -->
+                <div class="product-card reveal">
+                    <span class="product-badge">Novidade</span>
+                    <div class="product-image-container">
+                        <img src="images/SekDaIza.jpeg" alt="SEK da IZA" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-placeholder" style="display: none;">
+                            <span class="icon">🔥</span>
+                            <span class="name">SEK da IZA</span>
+                        </div>
                     </div>
                     <div class="product-info">
                         <h3>SEK da IZA</h3>
-                        <p>Obtenha um corpo mais magro, uma barriga chapada e livre de retenção de líquidos, tudo de forma saudável. Cápsulas de fibra que proporcionam saciedade e auxiliam na gestão do peso.</p>
-                        <div class="benefits-list">
-                            <div class="benefit-item"><span class="check check-orange">✓</span><span>Aumento da saciedade e redução do peso</span></div>
-                            <div class="benefit-item"><span class="check check-orange">✓</span><span>Potencialização dos treinos e mais energia</span></div>
-                            <div class="benefit-item"><span class="check check-orange">✓</span><span>Melhor regulação da glicose</span></div>
-                            <div class="benefit-item"><span class="check check-orange">✓</span><span>Regulação do intestino</span></div>
-                            <div class="benefit-item"><span class="check check-orange">✓</span><span>Melhora da resistência física e recuperação muscular</span></div>
-                        </div>
-                        <a href="https://ev.braip.com/ref?pv=pro51ko3&af=afi07ep1e1" target="_blank" rel="noopener noreferrer" class="cta-button cta-orange">
-                            🛒 Quero Emagrecer com Saúde
+                        <p>Cápsulas de fibra que proporcionam saciedade e auxiliam na gestão do peso de forma saudável e natural.</p>
+                        <ul class="benefits-list">
+                            <li><span class="check">✓</span> Aumento da saciedade</li>
+                            <li><span class="check">✓</span> Mais energia para treinos</li>
+                            <li><span class="check">✓</span> Regulação da glicose</li>
+                            <li><span class="check">✓</span> Melhora o intestino</li>
+                        </ul>
+                        <a href="https://ev.braip.com/ref?pv=pro51ko3&af=afi07ep1e1" target="_blank" rel="noopener noreferrer" class="btn-product">
+                            🛒 Quero Emagrecer
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Product 3: DermaNattus -->
-    <section class="product-section section-purple">
-        <div class="container">
-            <div class="product-card card-purple">
-                <div class="product-badge badge-purple">⭐ QUERIDINHO</div>
-                <div class="product-content">
-                    <div class="product-image img-purple">
-                        <span class="icon">✨</span>
-                        <span class="name">DermaNattus</span>
+                <!-- Product 3: DermaNattus -->
+                <div class="product-card reveal">
+                    <span class="product-badge">Queridinho</span>
+                    <div class="product-image-container">
+                        <img src="images/DermaNattus.jpeg" alt="DermaNattus" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-placeholder" style="display: none;">
+                            <span class="icon">✨</span>
+                            <span class="name">DermaNattus</span>
+                        </div>
                     </div>
                     <div class="product-info">
                         <h3>DermaNattus</h3>
-                        <p>Sua idade é apenas um número para o queridinho das famosas. Tratamento de dentro pra fora que ataca as causas do envelhecimento para uma pele rejuvenescida.</p>
-                        <p class="highlight" style="color: #8b5cf6;">✨ O queridinho das famosas para rejuvenescimento!</p>
-                        <div class="benefits-list">
-                            <div class="benefit-item"><span class="check check-purple">✓</span><span>Eficácia comprovada para o rejuvenescimento da pele</span></div>
-                            <div class="benefit-item"><span class="check check-purple">✓</span><span>Auxilia na formação do colágeno</span></div>
-                            <div class="benefit-item"><span class="check check-purple">✓</span><span>Rico em vitaminas, minerais e antioxidantes</span></div>
-                            <div class="benefit-item"><span class="check check-purple">✓</span><span>Registrado e aprovado pela Anvisa</span></div>
-                            <div class="benefit-item"><span class="check check-purple">✓</span><span>100% natural, Zero Glúten e Zero Açúcar</span></div>
-                        </div>
-                        <a href="https://ev.braip.com/ref?pv=prod323k&af=afig57gqn1" target="_blank" rel="noopener noreferrer" class="cta-button cta-purple">
+                        <p>O queridinho das famosas! Tratamento de dentro pra fora para uma pele rejuvenescida e radiante.</p>
+                        <ul class="benefits-list">
+                            <li><span class="check">✓</span> Rejuvenescimento da pele</li>
+                            <li><span class="check">✓</span> Formação de colágeno</li>
+                            <li><span class="check">✓</span> Rico em antioxidantes</li>
+                            <li><span class="check">✓</span> Aprovado pela Anvisa</li>
+                        </ul>
+                        <a href="https://ev.braip.com/ref?pv=prod323k&af=afig57gqn1" target="_blank" rel="noopener noreferrer" class="btn-product">
                             🛒 Quero Rejuvenescer
                         </a>
                     </div>
@@ -414,26 +1261,124 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="depoimentos">
         <div class="container">
-            <h2>Por que escolher nossos produtos?</h2>
-            <p>Comprometidos com sua beleza e saúde</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3>100% Natural</h3>
-                    <p>Produtos com ingredientes naturais e selecionados</p>
+            <div class="section-header reveal">
+                <h2>Resultados <span>Reais</span></h2>
+                <p>Veja as transformações de quem já usou nossos produtos</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Polivitaminico Depoimentos -->
+                <div class="testimonial-card reveal">
+                    <img src="images/Polivitaminico-Depoimento-01.jpeg" alt="Resultado Polivitamínico" class="testimonial-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22350%22 height=%22280%22%3E%3Crect fill=%22%23ede9fe%22 width=%22350%22 height=%22280%22/%3E%3Ctext fill=%22%239333ea%22 x=%22175%22 y=%22140%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22%3EResultado 1%3C/text%3E%3C/svg%3E'">
+                    <div class="testimonial-content">
+                        <span class="testimonial-product">Polivitamínico da Iza</span>
+                        <p class="testimonial-text">"Meu cabelo cresceu muito em poucos meses de uso!"</p>
+                    </div>
                 </div>
-                <div class="feature-card">
+                
+                <div class="testimonial-card reveal">
+                    <img src="images/Polivitaminico-Depoimento-02.jpeg" alt="Resultado Polivitamínico" class="testimonial-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22350%22 height=%22280%22%3E%3Crect fill=%22%23ede9fe%22 width=%22350%22 height=%22280%22/%3E%3Ctext fill=%22%239333ea%22 x=%22175%22 y=%22140%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22%3EResultado 2%3C/text%3E%3C/svg%3E'">
+                    <div class="testimonial-content">
+                        <span class="testimonial-product">Polivitamínico da Iza</span>
+                        <p class="testimonial-text">"A queda do cabelo diminuiu drasticamente!"</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card reveal">
+                    <img src="images/Polivitaminico-Depoimento-03.jpeg" alt="Resultado Polivitamínico" class="testimonial-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22350%22 height=%22280%22%3E%3Crect fill=%22%23ede9fe%22 width=%22350%22 height=%22280%22/%3E%3Ctext fill=%22%239333ea%22 x=%22175%22 y=%22140%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22%3EResultado 3%3C/text%3E%3C/svg%3E'">
+                    <div class="testimonial-content">
+                        <span class="testimonial-product">Polivitamínico da Iza</span>
+                        <p class="testimonial-text">"Minhas unhas também ficaram mais fortes!"</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card reveal">
+                    <img src="images/Polivitaminico-Depoimento-04.jpeg" alt="Resultado Polivitamínico" class="testimonial-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22350%22 height=%22280%22%3E%3Crect fill=%22%23ede9fe%22 width=%22350%22 height=%22280%22/%3E%3Ctext fill=%22%239333ea%22 x=%22175%22 y=%22140%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22%3EResultado 4%3C/text%3E%3C/svg%3E'">
+                    <div class="testimonial-content">
+                        <span class="testimonial-product">Polivitamínico da Iza</span>
+                        <p class="testimonial-text">"Resultados incríveis em pouco tempo!"</p>
+                    </div>
+                </div>
+                
+                <!-- SEK da IZA Depoimentos -->
+                <div class="testimonial-card reveal">
+                    <img src="images/SEKdaIZA-Depoimento-01.jpeg" alt="Resultado SEK da IZA" class="testimonial-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22350%22 height=%22280%22%3E%3Crect fill=%22%23fef3c7%22 width=%22350%22 height=%22280%22/%3E%3Ctext fill=%22%23f97316%22 x=%22175%22 y=%22140%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22%3EResultado 1%3C/text%3E%3C/svg%3E'">
+                    <div class="testimonial-content">
+                        <span class="testimonial-product">SEK da IZA</span>
+                        <p class="testimonial-text">"Perdi peso sem passar fome!"</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card reveal">
+                    <img src="images/SEKdaIZA-Depoimento-02.jpeg" alt="Resultado SEK da IZA" class="testimonial-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22350%22 height=%22280%22%3E%3Crect fill=%22%23fef3c7%22 width=%22350%22 height=%22280%22/%3E%3Ctext fill=%22%23f97316%22 x=%22175%22 y=%22140%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22%3EResultado 2%3C/text%3E%3C/svg%3E'">
+                    <div class="testimonial-content">
+                        <span class="testimonial-product">SEK da IZA</span>
+                        <p class="testimonial-text">"Barriga chapada em poucas semanas!"</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card reveal">
+                    <img src="images/SEKdaIZA-Depoimento-03.jpeg" alt="Resultado SEK da IZA" class="testimonial-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22350%22 height=%22280%22%3E%3Crect fill=%22%23fef3c7%22 width=%22350%22 height=%22280%22/%3E%3Ctext fill=%22%23f97316%22 x=%22175%22 y=%22140%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22%3EResultado 3%3C/text%3E%3C/svg%3E'">
+                    <div class="testimonial-content">
+                        <span class="testimonial-product">SEK da IZA</span>
+                        <p class="testimonial-text">"Mais energia e menos medidas!"</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card reveal">
+                    <img src="images/SEKdaIZA-Depoimento-04.jpeg" alt="Resultado SEK da IZA" class="testimonial-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22350%22 height=%22280%22%3E%3Crect fill=%22%23fef3c7%22 width=%22350%22 height=%22280%22/%3E%3Ctext fill=%22%23f97316%22 x=%22175%22 y=%22140%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22%3EResultado 4%3C/text%3E%3C/svg%3E'">
+                    <div class="testimonial-content">
+                        <span class="testimonial-product">SEK da IZA</span>
+                        <p class="testimonial-text">"Transformação visível!"</p>
+                    </div>
+                </div>
+                
+                <!-- DermaNattus Depoimentos -->
+                <div class="testimonial-card reveal">
+                    <img src="images/DermaNattus-Depoimento-01.jpeg" alt="Resultado DermaNattus" class="testimonial-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22350%22 height=%22280%22%3E%3Crect fill=%22%23f3e8ff%22 width=%22350%22 height=%22280%22/%3E%3Ctext fill=%22%238b5cf6%22 x=%22175%22 y=%22140%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22%3EResultado 1%3C/text%3E%3C/svg%3E'">
+                    <div class="testimonial-content">
+                        <span class="testimonial-product">DermaNattus</span>
+                        <p class="testimonial-text">"Minha pele ficou muito mais luminosa!"</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card reveal">
+                    <img src="images/DermaNattus-Depoimento-02.jpeg" alt="Resultado DermaNattus" class="testimonial-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22350%22 height=%22280%22%3E%3Crect fill=%22%23f3e8ff%22 width=%22350%22 height=%22280%22/%3E%3Ctext fill=%22%238b5cf6%22 x=%22175%22 y=%22140%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22%3EResultado 2%3C/text%3E%3C/svg%3E'">
+                    <div class="testimonial-content">
+                        <span class="testimonial-product">DermaNattus</span>
+                        <p class="testimonial-text">"As linhas de expressão diminuíram!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="sobre">
+        <div class="container">
+            <div class="section-header reveal" style="color: white;">
+                <h2 style="color: white;">Por que escolher <span style="color: #fbbf24;">nossos produtos</span>?</h2>
+                <p style="color: rgba(255,255,255,0.9);">Comprometidos com sua beleza e saúde</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🌿</div>
+                    <h3>100% Natural</h3>
+                    <p>Produtos com ingredientes naturais selecionados, sem química prejudicial à saúde.</p>
+                </div>
+                <div class="feature-card reveal">
                     <div class="feature-icon">✅</div>
                     <h3>Resultados Comprovados</h3>
-                    <p>Milhares de clientes satisfeitos com resultados reais</p>
+                    <p>Milhares de clientes satisfeitos com transformações reais e visíveis.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card reveal">
                     <div class="feature-icon">❤️</div>
-                    <h3>Atendimento Personalizado</h3>
-                    <p>Suporte dedicado para tirar todas as suas dúvidas</p>
+                    <h3>Atendimento Exclusivo</h3>
+                    <p>Suporte dedicado para tirar todas as suas dúvidas e orientar seu uso.</p>
                 </div>
             </div>
         </div>
@@ -442,12 +1387,54 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Pronta para transformar sua vida?</h2>
-            <p>Escolha o produto ideal para você e comece sua jornada de transformação hoje mesmo!</p>
-            <div class="cta-buttons">
-                <a href="https://polivitaminicodaiza.com.br/?pv=pro1rw54&af=afi65y9x6l" target="_blank" rel="noopener noreferrer" class="cta-button cta-pink">💖 Poli da Iza</a>
-                <a href="https://ev.braip.com/ref?pv=pro51ko3&af=afi07ep1e1" target="_blank" rel="noopener noreferrer" class="cta-button cta-orange">🔥 SEK da IZA</a>
-                <a href="https://ev.braip.com/ref?pv=prod323k&af=afig57gqn1" target="_blank" rel="noopener noreferrer" class="cta-button cta-purple">✨ DermaNattus</a>
+            <div class="cta-box reveal">
+                <h2>Pronta para transformar sua vida?</h2>
+                <p>Escolha o produto ideal para você e comece sua jornada de transformação hoje mesmo!</p>
+                <div class="cta-buttons">
+                    <a href="https://polivitaminicodaiza.com.br/?pv=pro1rw54&af=afi65y9x6l" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        💖 Poli da Iza
+                    </a>
+                    <a href="https://ev.braip.com/ref?pv=pro51ko3&af=afi07ep1e1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="background: linear-gradient(135deg, #f97316, #ec4899); color: white; border: none;">
+                        🔥 SEK da IZA
+                    </a>
+                    <a href="https://ev.braip.com/ref?pv=prod323k&af=afig57gqn1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        ✨ DermaNattus
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contato">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3>Entre em Contato</h3>
+                    <p>Estamos prontos para tirar todas as suas dúvidas e ajudar você a escolher o produto ideal para suas necessidades.</p>
+                    <div class="contact-links">
+                        <a href="https://www.instagram.com/comunidade_beautiful?igsh=ZzRkNjJxdWVucTF2" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <span class="icon instagram">📷</span>
+                            <div>
+                                <strong>Instagram</strong>
+                                <p style="font-size: 13px; color: var(--gray-600);">@comunidade_beautiful</p>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/5515996925676?text=Olá! Quero informações dos produtos" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <span class="icon whatsapp">📱</span>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <p style="font-size: 13px; color: var(--gray-600);">(15) 99692-5676</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-info reveal">
+                    <h3>Horário de Atendimento</h3>
+                    <p>Atendemos de segunda a sexta-feira, das 9h às 18h, e aos sábados das 9h às 13h.</p>
+                    <p style="margin-top: 16px;"><strong>Resposta rápida garantida!</strong></p>
+                    <p style="color: var(--gray-600); font-size: 14px; margin-top: 8px;">Respondemos em até 1 hora durante o horário comercial.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -456,23 +1443,26 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="logo-beleza-saudavel.jpeg" alt="Beleza Saudável" onerror="this.style.display='none'">
-                    <div>
-                        <h3>Beleza Saudável</h3>
-                        <p>Cuidado natural para você</p>
-                    </div>
+                <div class="footer-brand">
+                    <h3>Beleza Saudável</h3>
+                    <p>Cuidado natural para você. Produtos 100% naturais selecionados para realçar sua beleza e promover saúde com resultados comprovados.</p>
                 </div>
-                <div class="footer-contact">
-                    <p>Entre em contato conosco:</p>
-                    <div class="footer-links">
-                        <a href="https://www.instagram.com/comunidade_beautiful?igsh=ZzRkNjJxdWVucTF2" target="_blank" rel="noopener noreferrer" class="instagram">
-                            📷 @comunidade_beautiful
-                        </a>
-                        <a href="https://wa.me/5515996925676" target="_blank" rel="noopener noreferrer" class="whatsapp">
-                            📱 (15) 99692-5676
-                        </a>
-                    </div>
+                <div class="footer-links-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#depoimentos">Resultados</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="https://polivitaminicodaiza.com.br/?pv=pro1rw54&af=afi65y9x6l" target="_blank">Polivitamínico da Iza</a></li>
+                        <li><a href="https://ev.braip.com/ref?pv=pro51ko3&af=afi07ep1e1" target="_blank">SEK da IZA</a></li>
+                        <li><a href="https://ev.braip.com/ref?pv=prod323k&af=afig57gqn1" target="_blank">DermaNattus</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -480,5 +1470,141 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5515996925676?text=Olá! Quero informações dos produtos" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+        <span class="whatsapp-tooltip">Precisa de ajuda?</span>
+        <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Chatbot Toggle Button -->
+    <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Abrir chat">
+        <svg viewBox="0 0 24 24">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+            <path d="M7 9h10v2H7zm0-3h10v2H7z"/>
+        </svg>
+    </button>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            <h4>🤖 Assistente Virtual</h4>
+            <button class="chatbot-close" onclick="toggleChatbot()">✕</button>
+        </div>
+        <div class="chatbot-messages" id="chat-messages">
+            <div class="chat-message bot">
+                Olá! 👋 Sou a assistente virtual da Beleza Saudável. Como posso ajudar você?
+            </div>
+        </div>
+        <div class="chatbot-options" id="chat-options">
+            <button class="chat-option" onclick="sendChatMessage('Quero saber sobre os produtos')">Produtos</button>
+            <button class="chat-option" onclick="sendChatMessage('Quero saber sobre preços')">Preços</button>
+            <button class="chat-option" onclick="sendChatMessage('Como funciona o frete?')">Frete</button>
+            <button class="chat-option" onclick="sendChatMessage('Quero falar com um atendente')">Atendente</button>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+        
+        // Scroll reveal animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', reveal);
+        reveal();
+        
+        // Chatbot functionality
+        const chatbotResponses = {
+            'produtos': 'Temos 3 produtos incríveis! 💖\n\n<b>Polivitamínico da Iza</b> - Para cabelos saudáveis\n<b>SEK da IZA</b> - Para emagrecimento saudável\n<b>DermaNattus</b> - Para rejuvenescimento\n\nQual você gostaria de conhecer melhor?',
+            'preços': 'Nossos produtos têm preços acessíveis e parcelamento em até 12x! 💳\n\nQuer saber o preço específico de algum produto? Posso te direcionar para a página oficial.',
+            'frete': 'O frete é calculado na página de cada produto! 📦\n\nEntregamos para todo o Brasil com rapidez e segurança.',
+            'atendente': 'Vou te conectar com um atendente! 💬\n\nClique no botão do WhatsApp abaixo para falar diretamente conosco:\n\n<a href="https://wa.me/5515996925676?text=Olá! Quero informações dos produtos" target="_blank">Clique aqui para abrir o WhatsApp</a>',
+            'polivitaminico': 'O <b>Polivitamínico da Iza</b> é perfeito para:\n\n✓ Acelerar crescimento capilar\n✓ Fortalecer os fios\n✓ Reduzir a queda em até 95%\n✓ Melhorar pele e unhas\n\n<a href="https://polivitaminicodaiza.com.br/?pv=pro1rw54&af=afi65y9x6l" target="_blank">Clique aqui para ver mais detalhes</a>',
+            'sek': 'A <b>SEK da IZA</b> é ideal para:\n\n✓ Aumentar saciedade\n✓ Auxiliar no emagrecimento\n✓ Mais energia\n✓ Regular intestino\n\n<a href="https://ev.braip.com/ref?pv=pro51ko3&af=afi07ep1e1" target="_blank">Clique aqui para ver mais detalhes</a>',
+            'dermanattus': 'O <b>DermaNattus</b> oferece:\n\n✓ Rejuvenescimento da pele\n✓ Formação de colágeno\n✓ Rico em antioxidantes\n✓ Aprovado pela Anvisa\n\n<a href="https://ev.braip.com/ref?pv=prod323k&af=afig57gqn1" target="_blank">Clique aqui para ver mais detalhes</a>',
+            'default': 'Desculpe, não entendi sua pergunta. 🤔\n\nVocê pode me perguntar sobre:\n• Produtos disponíveis\n• Preços e pagamento\n• Frete e entrega\n• Falar com atendente'
+        };
+        
+        function toggleChatbot() {
+            const chatbot = document.getElementById('chatbot');
+            const toggle = document.getElementById('chatbot-toggle');
+            chatbot.classList.toggle('active');
+            toggle.classList.toggle('hidden');
+        }
+        
+        document.getElementById('chatbot-toggle').addEventListener('click', toggleChatbot);
+        
+        function sendChatMessage(message) {
+            const messagesContainer = document.getElementById('chat-messages');
+            
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'chat-message user';
+            userMessage.textContent = message;
+            messagesContainer.appendChild(userMessage);
+            
+            // Get bot response
+            let response = chatbotResponses.default;
+            const lowerMessage = message.toLowerCase();
+            
+            if (lowerMessage.includes('produto')) {
+                response = chatbotResponses.produtos;
+            } else if (lowerMessage.includes('preço') || lowerMessage.includes('preco') || lowerMessage.includes('valor') || lowerMessage.includes('pagamento')) {
+                response = chatbotResponses.preços;
+            } else if (lowerMessage.includes('frete') || lowerMessage.includes('entrega') || lowerMessage.includes('prazo')) {
+                response = chatbotResponses.frete;
+            } else if (lowerMessage.includes('atendente') || lowerMessage.includes('humano') || lowerMessage.includes('falar')) {
+                response = chatbotResponses.atendente;
+            } else if (lowerMessage.includes('polivitaminico') || lowerMessage.includes('poli') || lowerMessage.includes('cabelo')) {
+                response = chatbotResponses.polivitaminico;
+            } else if (lowerMessage.includes('sek') || lowerMessage.includes('emagrec') || lowerMessage.includes('peso')) {
+                response = chatbotResponses.sek;
+            } else if (lowerMessage.includes('dermanattus') || lowerMessage.includes('pele') || lowerMessage.includes('rejuvenesc')) {
+                response = chatbotResponses.dermanattus;
+            }
+            
+            // Add bot response with delay
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.className = 'chat-message bot';
+                botMessage.innerHTML = response;
+                messagesContainer.appendChild(botMessage);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 500);
+            
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
