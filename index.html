@@ -1142,6 +1142,48 @@
             opacity: 1;
             transform: translateY(0);
         }
+		
+		.product-slider {
+			position: relative;
+			width: 100%;
+			height: 220px;
+			overflow: hidden;
+		}
+
+		.product-slider .slide {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			opacity: 0;
+			transition: opacity 0.5s ease;
+		}
+
+		.product-slider .slide.active {
+			opacity: 1;
+		}
+
+		.slider-btn {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			border: none;
+			background: rgba(0,0,0,0.4);
+			color: white;
+			width: 35px;
+			height: 35px;
+			cursor: pointer;
+			border-radius: 50%;
+			z-index: 2;
+		}
+
+		.slider-btn.prev {
+			left: 10px;
+		}
+
+		.slider-btn.next {
+			right: 10px;
+		}
     </style>
     
     <!-- Structured Data for SEO -->
@@ -1152,7 +1194,7 @@
         "name": "Beleza Saudável",
         "description": "Produtos 100% naturais para beleza e bem-estar",
         "image": "images/beleza-saudavel.jpeg",
-        "url": "https://beleza-saudavel.vercel.app/",
+        "url": "https://www.belezasaudavel.com.br/",
         "telephone": "+55-15-99692-5676",
         "address": {
             "@type": "PostalAddress",
@@ -1240,7 +1282,45 @@
                 <p>Soluções naturais desenvolvidas com ingredientes selecionados para sua beleza e bem-estar</p>
             </div>
             
+
             <div class="products-grid">
+
+                <!-- Product 1: Creme Adeus Clareador de Manchas -->
+                <div class="product-card reveal">
+                    <span class="product-badge">Adeus Manchas</span>
+                    <div class="product-image-container">
+                    <div class="product-slider">
+						<img src="images/Adeus_Clareador_Manchas_01.jpeg" class="slide">
+						<img src="images/Adeus_Clareador_Manchas_02.jpeg" class="slide">
+						<img src="images/Adeus_Clareador_Manchas_03.jpeg" class="slide">
+						<img src="images/Adeus_Clareador_Manchas_04.jpeg" class="slide">
+						<img src="images/Adeus_Clareador_Manchas_05.jpeg" class="slide">
+						
+						<button class="slider-btn prev" onclick="changeSlide(this,-1)">❮</button>
+						<button class="slider-btn next" onclick="changeSlide(this,1)">❯</button>
+					</div>
+						<!-- <img src="images/Puro_Slim.jpeg" alt="Puro Slim" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"> -->
+                        <div class="product-placeholder" style="display: none;">
+                            <span class="icon">💖</span>
+                            <span class="name">Adeus Manchas</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Creme Adeus Clareador de Manchas 100g.</h3>
+                        <p>Um clareador facial e corporal criado para mulheres que querem uniformizar a cor da pele em áreas como axilas, virilhas, joelhos, cotovelos e também na região íntima..</p>
+                        <ul class="benefits-list">
+                            <li><span class="check">✓</span> Eficácia: A Solução Inteligente para Clarear Sua Pele.</li>
+							<li><span class="check">✓</span> Produto único no brasil: 🍌 10x mais potente!</li>
+                            <li><span class="check">✓</span> Liberdade: Dê adeus às axilas escuras e à vergonha de mostrar seus braços!</li>
+                            <li><span class="check">✓</span> liberte-se: Virilha escura? Diga Adeus ao constrangimento e olá à sua liberdade.</li>
+							<li><span class="check">✓</span> Reduz manchas faciais e olheiras.</li>
+                        </ul>
+                        <a href="https://b4.app/tO3LU23m" target="_blank" rel="noopener noreferrer" class="btn-product">
+                            🛒 Adeus as suas manchas!
+                        </a>
+                    </div>
+                </div>			
+			
                 <!-- Product 1: Polivitamínico da Iza -->
                 <div class="product-card reveal">
                     <span class="product-badge">Destaque</span>
@@ -1552,7 +1632,8 @@
                 <div class="footer-links-section">
                     <h4>Produtos</h4>
                     <ul>
-                        <li><a href="https://ev.braip.com/ref?pv=pro1rw54&af=afi65y9x6l" target="_blank">Polivitamínico da Iza</a></li>
+                        <li><a href="https://b4.app/tO3LU23m" target="_blank">Clareador de Manchas</a></li>
+						<li><a href="https://ev.braip.com/ref?pv=pro1rw54&af=afi65y9x6l" target="_blank">Polivitamínico da Iza</a></li>
                         <li><a href="https://ev.braip.com/ref?pv=pro51ko3&af=afi07ep1e1" target="_blank">SEK da IZA</a></li>
                         <li><a href="https://ev.braip.com/ref?pv=prod323k&af=afig57gqn1" target="_blank">DermaNattus</a></li>
 						<li><a href="https://ev.braip.com/ref?pv=prodz295&af=afivpolv51" target="_blank">PuroSlim</a></li>
@@ -1597,7 +1678,7 @@
         </div>
         <div class="chatbot-messages" id="chat-messages">
             <div class="chat-message bot">
-                Olá! 👋 Sou a assistente virtual da Beleza Saudável. Como posso ajudar você?
+                Olá! 👋 Sou a assistente virtual da Beleza Saudável. Como posso ajudar você hoje?
             </div>
         </div>
         <div class="chatbot-options" id="chat-options">
@@ -1649,7 +1730,7 @@
             'polivitaminico': 'O <b>Polivitamínico da Iza</b> é perfeito para:\n\n✓ Acelerar crescimento capilar\n✓ Fortalecer os fios\n✓ Reduzir a queda em até 95%\n✓ Melhorar pele e unhas\n\n<a href="https://ev.braip.com/ref?pv=pro1rw54&af=afi65y9x6l" target="_blank">Clique aqui para ver mais detalhes</a>',
             'sek': 'A <b>SEK da IZA</b> é ideal para:\n\n✓ Aumentar saciedade\n✓ Auxiliar no emagrecimento\n✓ Mais energia\n✓ Regular intestino\n\n<a href="https://ev.braip.com/ref?pv=pro51ko3&af=afi07ep1e1" target="_blank">Clique aqui para ver mais detalhes</a>',
             'dermanattus': 'O <b>DermaNattus</b> oferece:\n\n✓ Rejuvenescimento da pele\n✓ Formação de colágeno\n✓ Rico em antioxidantes\n✓ Aprovado pela Anvisa\n\n<a href="https://ev.braip.com/ref?pv=prod323k&af=afig57gqn1" target="_blank">Clique aqui para ver mais detalhes</a>',
-			'puroslim': 'O <b>PuroSlim</b> é ideal para quem busca emagrecimento saudável:\n\n✓ Acelera o metabolismo\n✓ Auxilia na queima de gordura\n✓ Promove maior saciedade\n✓ Reduz a vontade de comer doces\n✓ Aumenta a energia e melhora o humor\n\n<a href="https://ev.braip.com/ref?pv=prodz295&af=afivpolv51"</a>',
+			'puroslim': 'O <b>PuroSlim</b> é ideal para quem busca emagrecimento saudável:<br><br>✓ Acelera o metabolismo<br>✓ Auxilia na queima de gordura<br>✓ Promove maior saciedade<br>✓ Reduz a vontade de comer doces<br>✓ Aumenta a energia e melhora o humor<br><br>https://ev.braip.com/ref?pv=prodz295&af=afivpolv51Clique aqui para ver mais detalhes</a>',
             'default': 'Desculpe, não entendi sua pergunta. 🤔\n\nVocê pode me perguntar sobre:\n• Produtos disponíveis\n• Preços e pagamento\n• Frete e entrega\n• Falar com atendente'
         };
         
@@ -1723,6 +1804,29 @@
                 sendUserMessage();
             }
         }
+		
+		function changeSlide(button, direction) {
+
+			const slider = button.parentElement;
+			const slides = slider.querySelectorAll('.slide');
+
+			let current = 0;
+
+			slides.forEach((slide, index) => {
+				if (slide.classList.contains('active')) {
+					current = index;
+					slide.classList.remove('active');
+				}
+			});
+
+			let next = current + direction;
+
+			if (next >= slides.length) next = 0;
+
+			if (next < 0) next = slides.length - 1;
+
+			slides[next].classList.add('active');
+		}
         
         // Smooth scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1737,6 +1841,27 @@
                 }
             });
         });
+		
+		document.querySelectorAll('.product-slider').forEach(slider => {
+
+			let current = 0;
+			const slides = slider.querySelectorAll('.slide');
+
+			setInterval(() => {
+
+				slides[current].classList.remove('active');
+
+				current++;
+
+				if (current >= slides.length) {
+					current = 0;
+				}
+
+				slides[current].classList.add('active');
+
+			}, 3000);
+
+		});
     </script>
 </body>
 </html>
